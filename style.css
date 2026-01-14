@@ -441,3 +441,5 @@ body {
     left: 0;
     font-size: 18px;
 }
+
+/* Restauração: Removidos ajustes de grid, largura e padding dos projetos feitos para mobile. Mantido apenas o layout desktop original. */
