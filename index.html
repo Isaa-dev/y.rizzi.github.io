@@ -14,7 +14,7 @@
 <body>
     <nav>
         <div class="logo">
-            <h2>Isabella <span>Rizzi</span></h2>
+            <h2>Meu<span>Portfólio</span></h2>
         </div>
         <div class="link">
             <ul>
@@ -23,11 +23,10 @@
                 <li><a href="#habilidades">Habilidades</a></li>
                 <li><a href="#projetos">Projetos</a></li>
                 <li><a href="#contato">Contato</a></li>
-    
             </ul>
         </div>
     </nav>
-<div class="main">
+<div class="main" id="inicio">
     <img src="assets/foto principal.png" alt="Foto Principal">
     <div class="main-detail">
         <p>Olá, eu sou a</p>
@@ -35,26 +34,22 @@
         <h3>Desenvolvedora Front-End</h3>
 
         <div class="btn">
-            <button class="btn-1">Meu currículo</button>
-                        <button class="btn-2">Contrate-me</button>
+            <button class="btn-1" id="curriculoBtn">Meu currículo</button>
+            <button class="btn-2">Contrate-me</button>
         </div>
 
         <div class="social">
-            <i class="bx bxl-github"></i>
-            <i class="bx bxl-linkedin"></i>
+            <i class="bx bxl-github" id="githubIcon"></i>
+            <i class="bx bxl-linkedin" id="linkedinIcon"></i>
         </div>
     </div>
 </div>
 
-<section class="about-section animate-on-scroll">
+<section class="about-section animate-on-scroll" id="sobre">
     <div class="about-card">
         <div class="about-left">
             <h2>Sobre mim</h2>
             <p>Sou uma desenvolvedora front-end apaixonada por criar experiências digitais inovadoras. Com habilidades em HTML, CSS, JavaScript e frameworks modernos, transformo ideias em interfaces interativas e responsivas. Meu foco é combinar design e funcionalidade para entregar soluções que encantam e engajam os usuários.</p>
-            <div class="about-btn">
-                <button class="about-btn-1">Ver projetos</button>
-                <button class="about-btn-2">Download CV</button>
-            </div>
         </div>
         <div class="about-right">
             <div class="image-container">
@@ -64,7 +59,7 @@
     </div>
 </section>
 
-<section class="skills-section animate-on-scroll">
+<section class="skills-section animate-on-scroll" id="habilidades">
     <div class="skills-card">
         <div class="skills-col">
             <h3>Educação</h3>
@@ -97,6 +92,50 @@
     </div>
 </section>
 
+<section class="projects-section animate-on-scroll" id="projetos">
+  <h2 class="projects-title">Projetos em desenvolvimento</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3 class="project-name">Portfólio Pessoal</h3>
+      <p class="project-desc">Site pessoal para apresentar minhas habilidades, experiências e projetos. Em constante evolução para refletir meu crescimento profissional.</p>
+      <ul class="project-techs">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+      </ul>
+    </div>
+    <div class="project-card">
+      <h3 class="project-name">App de Tarefas</h3>
+      <p class="project-desc">Aplicativo web para organização de tarefas diárias, com foco em produtividade e interface intuitiva.</p>
+      <ul class="project-techs">
+        <li>React</li>
+        <li>Styled Components</li>
+        <li>Vite</li>
+      </ul>
+    </div>
+    <div class="project-card">
+      <h3 class="project-name">Landing Page Startup</h3>
+      <p class="project-desc">Página de apresentação para startup fictícia, com layout responsivo e visual moderno.</p>
+      <ul class="project-techs">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>Figma</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section animate-on-scroll" id="contato">
+  <h2 class="contact-title">Contato</h2>
+  <form class="contact-form" action="https://formsubmit.co/isa160648@gmail.com" method="POST">
+    <input type="text" name="name" placeholder="Nome" required>
+    <input type="email" name="email" placeholder="E-mail" required>
+    <textarea name="message" placeholder="Mensagem" rows="5" required></textarea>
+    <button type="submit" class="contact-btn">Enviar mensagem</button>
+    <div class="form-success" style="display:none;">Mensagem enviada com sucesso!</div>
+  </form>
+</section>
+
 <script>
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -107,6 +146,87 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 
 document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// Download funcionalidade para o botão 'Meu currículo'
+const curriculoBtn = document.getElementById('curriculoBtn');
+if (curriculoBtn) {
+  curriculoBtn.addEventListener('click', function() {
+    const link = document.createElement('a');
+    link.href = 'assets/Currículo_2026.pdf';
+    link.download = 'Currículo_2026.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+}
+
+// Scroll suave para os links do menu
+const navLinks = document.querySelectorAll('nav .link ul li a');
+navLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
+});
+
+// Scroll suave para o botão Contrate-me
+const hireBtn = document.querySelector('.btn-2');
+if (hireBtn) {
+  hireBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const contatoSection = document.getElementById('contato');
+    if (contatoSection) {
+      contatoSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+}
+
+// Feedback visual ao enviar formulário de contato
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    setTimeout(() => {
+      const successMsg = document.querySelector('.form-success');
+      if (successMsg) {
+        successMsg.style.display = 'block';
+        setTimeout(() => { successMsg.style.display = 'none'; }, 4000);
+      }
+    }, 1000);
+  });
+}
+
+// Animação sutil para os cards de projetos
+const projectCards = document.querySelectorAll('.project-card');
+const projectObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+    }
+  });
+}, { threshold: 0.15 });
+projectCards.forEach(card => projectObserver.observe(card));
+
+// Link para o LinkedIn
+const linkedinIcon = document.getElementById('linkedinIcon');
+if (linkedinIcon) {
+  linkedinIcon.addEventListener('click', function() {
+    window.open('https://www.linkedin.com/in/isabella-correia-20b419217/', '_blank');
+  });
+}
+// Link para o GitHub
+const githubIcon = document.getElementById('githubIcon');
+if (githubIcon) {
+  githubIcon.addEventListener('click', function() {
+    window.open('https://github.com/Isaa-dev', '_blank');
+  });
+}
 </script>
 
 </body>
+</html>
