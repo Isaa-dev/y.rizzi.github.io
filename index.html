@@ -1,114 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Portfólio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        header p {
-            font-size: 1.2em;
-        }
-        section {
-            padding: 40px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .about, .skills, .projects, .contact {
-            margin-bottom: 40px;
-        }
-        h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-        }
-        .skills ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .skills li {
-            background-color: #e9e9e9;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .projects .project {
-            background-color: white;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Isabella Rizzi</h1>
-        <p>Desenvolvedor Web | Designer | Criador de Conteúdo</p>
-    </header>
-
-    <section class="about">
-        <h2>Sobre Mim</h2>
-        <p>Olá! Me chamo Isabella, apaixonada por tecnologia e design. Com experiência em desenvolvimento web, crio soluções inovadoras e interfaces intuitivas. Adoro aprender novas tecnologias e compartilhar conhecimento.</p>
-    </section>
-
-    <section class="skills">
-        <h2>Habilidades</h2>
-        <ul>
-            <li>HTML & CSS</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Node.js</li>
-            <li>Python</li>
-            <li>UI/UX Design</li>
-        </ul>
-    </section>
-
-    <section class="projects">
-        <h2>Projetos</h2>
-        <div class="project">
-            <h3>Projeto 1: Sistema de Controle Financeiro>
-            <p>Desenvolvimento de um site de controle financeiro utilizando HTML, CSS e JavaScript.</p>
-            <a href="#">Ver Projeto</a>
+    <nav>
+        <div class="logo">
+            <h2>Isabella <span>Rizzi</span></h2>
         </div>
-        <div class="project">
-            <h3>Projeto 2: Aplicação Web</h3>
-            <p>Criação de uma aplicação web com React e Node.js.</p>
-            <a href="#">Ver Projeto</a>
+        <div class="link">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre">Sobre mim</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+    
+            </ul>
         </div>
-    </section>
+    </nav>
+<div class="main">
+    <img src="assets/foto principal.png" alt="Foto Principal">
+    <div class="main-detail">
+        <p>Olá, eu sou a</p>
+        <h1><span class="typing-text">Isabella <span>Rizzi</span></span></h1>
+        <h3>Desenvolvedora Front-End</h3>
 
-    <section class="contact">
-        <h2>Contato</h2>
-        <p>Email: isa160648@gmail.com</p>
-        <p>LinkedIn: <a href="#">linkedin.com/in/isa</a></p>
-        <p>GitHub: <a href="#">github.com/isa</a></p>
-    </section>
+        <div class="btn">
+            <button class="btn-1">Meu currículo</button>
+                        <button class="btn-2">Contrate-me</button>
+        </div>
 
-    <footer>
-        <p>&copy; 2026
-            . Todos os direitos reservados.</p>
-    </footer>
+        <div class="social">
+            <i class="bx bxl-github"></i>
+            <i class="bx bxl-linkedin"></i>
+        </div>
+    </div>
+</div>
+
+<section class="about-section animate-on-scroll">
+    <div class="about-card">
+        <div class="about-left">
+            <h2>Sobre mim</h2>
+            <p>Sou uma desenvolvedora front-end apaixonada por criar experiências digitais inovadoras. Com habilidades em HTML, CSS, JavaScript e frameworks modernos, transformo ideias em interfaces interativas e responsivas. Meu foco é combinar design e funcionalidade para entregar soluções que encantam e engajam os usuários.</p>
+            <div class="about-btn">
+                <button class="about-btn-1">Ver projetos</button>
+                <button class="about-btn-2">Download CV</button>
+            </div>
+        </div>
+        <div class="about-right">
+            <div class="image-container">
+                <img src="assets/foto contato.png" alt="Foto contato Sobre Mim">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="skills-section animate-on-scroll">
+    <div class="skills-card">
+        <div class="skills-col">
+            <h3>Educação</h3>
+            <ul>
+                <li>Tecnologo em Analise e Desenvolvimento de Sistemas - Centro Universitário das Américas (FAM) (2025-2027)</li>
+                <li>Curso de Informatica - Microcamp (2024)</li>
+            </ul>
+        </div>
+        <div class="skills-col">
+            <h3>Habilidades sociais</h3>
+            <ul>
+                <li>Comunicação eficaz</li>
+                <li>Trabalho em equipe</li>
+                <li>Pensamento crítico</li>
+                <li>Resolução de problemas</li>
+                <li>Aprendizado contínuo</li>
+            </ul>
+        </div>
+        <div class="skills-col">
+            <h3>Ferramentas</h3>
+            <ul>
+                <li>HTML5 & CSS3</li>
+                <li>JavaScript (ES6+)</li>
+                <li>React & Vue.js</li>
+                <li>Git & GitHub</li>
+                <li>Figma</li>
+                <li>Node.js</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+</script>
+
 </body>
-</html>
